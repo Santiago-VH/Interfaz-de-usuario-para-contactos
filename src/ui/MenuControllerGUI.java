@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -88,6 +87,17 @@ public class MenuControllerGUI {
     	mainPane.getChildren().setAll(form3);
     	
     	initializeTableView();
+    }
+    
+    @FXML
+    public void importContacts(ActionEvent event) throws IOException {
+    	contactManager.importData();
+    	initializeTableView();
+    }
+    
+    @FXML
+    void exportContacts(ActionEvent event) throws IOException {
+    	contactManager.exportData();
     }
     
     @FXML
